@@ -17,7 +17,7 @@ const Register = () => {
         try {
             const { data } = await axios.post(`${import.meta.env.VITE_API_URL}/api/auth/register`, formData);
             if (data.success) {
-                loginUser(data.token, data.user);
+                loginUser(data.token, data.user, '/');
                 toast.success('Registration Successful');
             } else {
                 toast.error(data.message);
