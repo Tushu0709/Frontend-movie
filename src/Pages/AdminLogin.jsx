@@ -15,7 +15,7 @@ const AdminLogin = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const { data } = await axios.post(`${import.meta.env.VITE_API_URL}/api/auth/login`, formData);
+            const { data } = await axios.post(`${import.meta.env.VITE_API_URL}/admin/login`, formData);
             if (data.success) {
                 if (data.user.role !== 'admin') {
                      toast.error('Access Denied: Admins Only');
