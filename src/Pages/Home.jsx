@@ -21,7 +21,7 @@ const Home = () => {
 
   const fetchMovies = async () => {
     try {
-      const { data } = await axios.get("https://movie-backend-production-3d6a.up.railway.app/api/movie");
+      const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/api/movie`);
       if (data.success || data.movies) {
         setMovies(data.movies || []);
       }

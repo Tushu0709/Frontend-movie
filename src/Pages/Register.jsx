@@ -15,7 +15,7 @@ const Register = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const { data } = await axios.post('https://movie-backend-production-3d6a.up.railway.app/api/auth/register', formData);
+            const { data } = await axios.post(`${import.meta.env.VITE_API_URL}/api/auth/register`, formData);
             if (data.success) {
                 loginUser(data.token, data.user);
                 toast.success('Registration Successful');

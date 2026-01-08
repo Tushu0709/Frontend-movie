@@ -40,7 +40,7 @@ const UpdateMovie = () => {
                 // `Moviedetails` likely fetches data.
                 
                 // Let's try fetching from public endpoint first.
-                const { data } = await axios.get(`https://movie-backend-production-3d6a.up.railway.app/api/movie/${id}`);
+                const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/api/movie/${id}`);
                 
                 if (data.success && data.movie) {
                     const movie = data.movie;
@@ -83,7 +83,7 @@ const UpdateMovie = () => {
             };
 
             
-            const { data } = await axios.put(`https://movie-backend-production-3d6a.up.railway.app/api/movie/${id}`, formData, config);
+            const { data } = await axios.put(`${import.meta.env.VITE_API_URL}/api/movie/${id}`, formData, config);
             
             if (data.success) {
                 toast.success('Movie Updated Successfully');

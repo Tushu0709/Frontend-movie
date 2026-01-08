@@ -30,7 +30,7 @@ const AddMovie = () => {
                 headers: { Authorization: `Bearer ${token}` }
             };
             
-            const { data } = await axios.post('https://movie-backend-production-3d6a.up.railway.app/api/movie', formData, config);
+            const { data } = await axios.post(`${import.meta.env.VITE_API_URL}/api/movie`, formData, config);
             
             if (data.success) {
                 toast.success('Movie Added Successfully');

@@ -14,7 +14,7 @@ const ListMovies = () => {
     try {
       // Endpoint is public now for GET, but let's see if we need admin specific list?
       // GET /api/movie returns paginated list.
-      const { data } = await axios.get("https://movie-backend-production-3d6a.up.railway.app/api/movie?limit=100"); // Fetch more for admin list
+      const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/api/movie?limit=100`); // Fetch more for admin list
       if (data.movies) {
         setMovies(data.movies);
       } else {
@@ -35,7 +35,7 @@ const ListMovies = () => {
       };
       
       const { data } = await axios.delete(
-        `https://movie-backend-production-3d6a.up.railway.app/api/movie/${id}`, // Updated endpoint structure
+        `${import.meta.env.VITE_API_URL}/api/movie/${id}`, // Updated endpoint structure
         config
       );
       

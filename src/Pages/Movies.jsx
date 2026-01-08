@@ -26,7 +26,7 @@ const Movies = () => {
     const fetchMovies = async () => {
         try {
             setLoading(true);
-            let url = "https://movie-backend-production-3d6a.up.railway.app/api/movie";
+            let url = `${import.meta.env.VITE_API_URL}/api/movie`;
             let params = { q: search, sort, limit: 1000 };
 
             if (isTopRated) {
