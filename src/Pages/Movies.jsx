@@ -12,7 +12,7 @@ const Movies = () => {
     const [movies, setMovies] = useState([]);
     const [loading, setLoading] = useState(false);
     const [search, setSearch] = useState("");
-    const [sort, setSort] = useState("date"); // default sort by date
+    const [sort, setSort] = useState("date"); 
     const [isTopRated, setIsTopRated] = useState(false);
     const [selectedMovie, setSelectedMovie] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -41,7 +41,7 @@ const Movies = () => {
             }
         } catch (error) {
             console.error(error);
-             // toast.error("Failed to fetch movies");
+             
         } finally {
             setLoading(false);
         }
@@ -50,13 +50,13 @@ const Movies = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
         fetchMovies();
-    }, [isTopRated, sort, search]); // Re-fetch when these dependency change
+    }, [isTopRated, sort, search]); 
 
-    // GSAP ScrollTrigger Animation
+    
     useEffect(() => {
         if (loading || movies.length === 0) return;
 
-        // Give a small delay to ensure DOM is ready
+        
         const ctx = gsap.context(() => {
             ScrollTrigger.batch(".movie-card-item", {
                 onEnter: (batch) => {
@@ -80,16 +80,16 @@ const Movies = () => {
                     });
                 },
                 onLeave: (batch) => {
-                    // Fade out and move up when leaving top
+                    
                     gsap.to(batch, { opacity: 0, y: -50, duration: 0.6, overwrite: true });
                 },
                 onLeaveBack: (batch) => {
-                     // Fade out and move down when leaving bottom
+                     
                      gsap.to(batch, { opacity: 0, y: 50, duration: 0.6, overwrite: true });
                 },
                 start: "top 90%",
                 end: "bottom 20%"
-                // markers: true
+                
             });
         }, containerRef);
 
@@ -108,7 +108,7 @@ const Movies = () => {
                  </div>
                  
                  <div className="flex flex-wrap items-center gap-4 w-full md:w-auto">
-                     {/* Top Rated Toggle */}
+                     { }
                     <button 
                         onClick={() => { setIsTopRated(!isTopRated); setSearch(""); }}
                         className={`hidden md:block px-5 py-2.5 rounded-xl font-medium text-sm transition-all duration-300 border ${isTopRated ? 'bg-primary border-primary text-white shadow-lg shadow-primary/30' : 'bg-transparent border-gray-700 text-gray-300 hover:border-gray-500 hover:text-white'}`}
@@ -118,7 +118,7 @@ const Movies = () => {
 
                      {!isTopRated && (
                          <div className="flex flex-1 md:flex-none gap-3 w-full md:w-auto">
-                            {/* Search Input */}
+                            { }
                             <div className="relative flex-grow md:flex-grow-0 group">
                                 <span className="absolute left-3 top-3 text-gray-500 group-focus-within:text-white transition-colors">
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -134,7 +134,7 @@ const Movies = () => {
                                 />
                             </div>
 
-                             {/* Sort Dropdown */}
+                             { }
                              <div className="relative">
                                 <select 
                                     className="appearance-none pl-4 pr-10 py-2.5 bg-[#1E1E1E] border border-gray-800 rounded-xl text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary cursor-pointer transition-all text-sm w-full md:w-auto"

@@ -15,31 +15,31 @@ const UpdateMovie = () => {
         description: ''
     });
 
-    // Helper to get token
+    
     const getToken = () => localStorage.getItem('adminToken');
 
-    // Fetch existing movie details
+    
     useEffect(() => {
         const fetchMovie = async () => {
             try {
-                // Determine if we need to fetch specifically by ID. 
-                // Since the GET /api/movie endpoint might return a list or search result, 
-                // we'll assume we might need to filter or if the backend supports /api/movie/:id GET (which is standard).
-                // Looking at previous context, public GET /api/movie lists movies. 
-                // Typical REST pattern suggests GET /api/movie/:id should exist or we filter.
-                // Let's try GET /api/movie/:id first. If it fails, we fall back to filtering via list (less ideal).
-                // Looking at movieRoutes.js earlier, it seemed to have router.get('/'...) and specific admin routes.
-                // Let's assume we need to fetch specific movie. If GET /:id isn't public, we might need auth or just iterate.
-                // Actually, earlier `ListMovies` used DELETE /api/movie/:id, so /:id is a valid path param structure.
-                // Typically access to details is public.
                 
-                // Constructing the GET request. 
-                // Note: If GET /api/movie/:id isn't implemented in backend, this might fail. 
-                // However, usually `Moviedetails` page exists (saw `Moviedetails` in `App.jsx` mapped to `/movies/:id`).
-                // Let's check `App.jsx`: `<Route path="/movies/:id" element={<Moviedetails />} />`. 
-                // `Moviedetails` likely fetches data.
                 
-                // Let's try fetching from public endpoint first.
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
                 const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/api/movie/${id}`);
                 
                 if (data.success && data.movie) {
@@ -58,9 +58,9 @@ const UpdateMovie = () => {
                 }
             } catch (error) {
                 console.error(error);
-                // Fallback: If specific GET fails, maybe try finding in list? 
-                // But for now, let's assume standard API behavior or existing structure.
-                // If it fails, I might need to check how `Moviedetails` fetches.
+                
+                
+                
                 toast.error('Failed to fetch movie details');
             }
         };
@@ -104,7 +104,7 @@ const UpdateMovie = () => {
             <h2 className="text-3xl font-bold mb-6 text-red-500 text-center">Update Movie</h2>
             <div className="max-w-2xl mx-auto bg-gray-800 rounded-lg shadow-lg p-8">
                 <form onSubmit={handleSubmit} className="space-y-6">
-                    {/* Title */}
+                    { }
                     <div>
                         <label className="block text-gray-300 text-sm font-bold mb-2" htmlFor="title">
                             Title
@@ -124,7 +124,7 @@ const UpdateMovie = () => {
 
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        {/* Rating */}
+                        { }
                         <div>
                             <label className="block text-gray-300 text-sm font-bold mb-2" htmlFor="rating">
                                 Rating (0-10)
@@ -143,7 +143,7 @@ const UpdateMovie = () => {
                             />
                         </div>
 
-                         {/* Duration */}
+                         { }
                         <div>
                              <label className="block text-gray-300 text-sm font-bold mb-2" htmlFor="duration">
                                 Duration (minutes)
@@ -163,7 +163,7 @@ const UpdateMovie = () => {
 
 
 
-                    {/* Release Date */}
+                    { }
                      <div>
                         <label className="block text-gray-300 text-sm font-bold mb-2" htmlFor="releaseDate">
                             Release Date
@@ -179,7 +179,7 @@ const UpdateMovie = () => {
                         />
                     </div>
 
-                    {/* Poster URL */}
+                    { }
                     <div>
                         <label className="block text-gray-300 text-sm font-bold mb-2" htmlFor="poster">
                             Poster URL
@@ -196,7 +196,7 @@ const UpdateMovie = () => {
                         />
                     </div>
 
-                    {/* Description */}
+                    { }
                     <div>
                         <label className="block text-gray-300 text-sm font-bold mb-2" htmlFor="description">
                             Description
@@ -214,7 +214,7 @@ const UpdateMovie = () => {
 
 
 
-                    {/* Submit Button */}
+                    { }
                     <button
                         type="submit"
                         className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded transition duration-200 mt-4"

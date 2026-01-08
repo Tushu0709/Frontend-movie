@@ -35,7 +35,7 @@ const Home = () => {
     fetchMovies();
   }, []);
 
-  // GSAP Animation for Latest Movies
+  
   useEffect(() => {
     if (movies.length > 0 && sectionRef.current) {
         const ctx = gsap.context(() => {
@@ -77,7 +77,7 @@ const Home = () => {
     <>
       <HeroSection/>
       
-      {/* Latest Movies Section */}
+      { }
       <div ref={sectionRef} className="py-20 px-4 md:px-12 lg:px-24 bg-[#09090B]">
         <div className="max-w-7xl mx-auto">
           <div className="flex justify-between items-end mb-10 header-animate opacity-0">

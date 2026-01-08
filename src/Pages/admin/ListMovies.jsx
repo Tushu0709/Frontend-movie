@@ -7,14 +7,14 @@ const ListMovies = () => {
   const [movies, setMovies] = useState([]);
   const navigate = useNavigate();
 
-  // Helper to get token
+  
   const getToken = () => localStorage.getItem('adminToken');
 
   const fetchMovies = async () => {
     try {
-      // Endpoint is public now for GET, but let's see if we need admin specific list?
-      // GET /api/movie returns paginated list.
-      const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/api/movie?limit=100`); // Fetch more for admin list
+      
+      
+      const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/api/movie?limit=100`); 
       if (data.movies) {
         setMovies(data.movies);
       } else {
@@ -35,13 +35,13 @@ const ListMovies = () => {
       };
       
       const { data } = await axios.delete(
-        `${import.meta.env.VITE_API_URL}/api/movie/${id}`, // Updated endpoint structure
+        `${import.meta.env.VITE_API_URL}/api/movie/${id}`, 
         config
       );
       
       if (data.success) {
         toast.success(data.message);
-        fetchMovies(); // Refresh list
+        fetchMovies(); 
       } else {
         toast.error(data.message);
       }
@@ -75,7 +75,7 @@ const ListMovies = () => {
               <tr key={movie._id} className="hover:bg-gray-750 transition border-b border-gray-700">
                 <td className="p-4">
                   <img
-                    // Handle both full URL (new manual add) and partial path (old TMDB data)
+                    
                     src={movie.poster.startsWith('http') ? movie.poster : `https://image.tmdb.org/t/p/w200${movie.poster}`}
                     alt={movie.title}
                     className="w-12 h-16 object-cover rounded"

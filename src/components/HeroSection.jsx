@@ -10,20 +10,20 @@ const HeroSection = () => {
     const images = [hero1, hero2, hero3];
     const [currentIndex, setCurrentIndex] = useState(0);
     
-    // Refs for animation
+    
     const titleRef = useRef(null);
     const subtitleRef = useRef(null);
     const buttonRef = useRef(null);
 
-    // Auto-slide effect
+    
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentIndex((prev) => (prev + 1) % images.length);
-        }, 5000); // Change every 5 seconds
+        }, 5000); 
         return () => clearInterval(interval);
     }, [images.length]);
 
-    // Initial Animation
+    
     useEffect(() => {
         const tl = gsap.timeline();
         
@@ -53,7 +53,7 @@ const HeroSection = () => {
 
     return (
         <div className='w-full h-[500px] sm:h-[600px] lg:h-[700px] relative overflow-hidden group mt-16'>
-            {/* Carousel Images */}
+            { }
              {images.map((img, index) => (
                 <div 
                     key={index}
@@ -64,12 +64,12 @@ const HeroSection = () => {
                         alt={`Hero Slide ${index + 1}`} 
                         className='w-full h-full object-cover'
                     />
-                     {/* Gradient Overlay */}
+                     { }
                     <div className='absolute inset-0 bg-gradient-to-t from-[#09090B] via-black/40 to-black/30'></div>
                 </div>
             ))}
 
-            {/* Content Container */}
+            { }
             <div className='absolute inset-0 z-10 flex flex-col justify-center items-center text-center px-4'>
                 <h1 
                     ref={titleRef}
@@ -92,7 +92,7 @@ const HeroSection = () => {
                 </button>
             </div>
 
-            {/* Navigation Dots */}
+            { }
             <div className='absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 z-20'>
                 {images.map((_, index) => (
                     <button
@@ -104,7 +104,7 @@ const HeroSection = () => {
                 ))}
             </div>
             
-             {/* Left Arrow */}
+             { }
             <button 
                 onClick={prevSlide}
                 className='absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/20 hover:bg-black/50 text-white opacity-0 group-hover:opacity-100 transition-all duration-300 backdrop-blur-sm hover:scale-110 z-20 hidden md:block'
@@ -114,7 +114,7 @@ const HeroSection = () => {
                 </svg>
             </button>
             
-            {/* Right Arrow */}
+            { }
              <button 
                 onClick={nextSlide}
                 className='absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/20 hover:bg-black/50 text-white opacity-0 group-hover:opacity-100 transition-all duration-300 backdrop-blur-sm hover:scale-110 z-20 hidden md:block'

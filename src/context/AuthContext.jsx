@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Check User Token
+    
     const token = localStorage.getItem("token");
     if (token) {
       try {
@@ -26,7 +26,7 @@ export const AuthProvider = ({ children }) => {
       }
     }
 
-    // Check Admin Token
+    
     const adminToken = localStorage.getItem("adminToken");
     if (adminToken) {
       try {

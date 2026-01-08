@@ -22,7 +22,7 @@ const MovieDetailModal = ({ movie, isOpen, onClose }) => {
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
           className="relative w-full max-w-4xl bg-[#18181B] rounded-2xl overflow-hidden shadow-2xl border border-gray-800 max-h-[90vh] overflow-y-auto"
         >
-          {/* Close Button */}
+          { }
           <button
             onClick={onClose}
             className="absolute top-4 right-4 z-10 p-2 rounded-full bg-black/50 hover:bg-black/70 text-white transition-colors"
@@ -31,7 +31,7 @@ const MovieDetailModal = ({ movie, isOpen, onClose }) => {
           </button>
 
           <div className="flex flex-col md:flex-row">
-            {/* Poster / Backdrop */}
+            { }
             <div className="w-full md:w-2/5 h-64 md:h-auto relative">
               <img
                 src={movie.poster || movie.backdrop || "https://via.placeholder.com/500x750?text=No+Image"}
@@ -41,7 +41,7 @@ const MovieDetailModal = ({ movie, isOpen, onClose }) => {
               <div className="absolute inset-0 bg-gradient-to-t from-[#18181B] via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:to-[#18181B] opacity-90"></div>
             </div>
 
-            {/* Content */}
+            { }
             <div className="w-full md:w-3/5 p-6 md:p-8 flex flex-col gap-4">
               <div>
                 <h2 className="text-3xl font-bold text-white mb-2">{movie.title}</h2>
@@ -81,7 +81,7 @@ const MovieDetailModal = ({ movie, isOpen, onClose }) => {
 
               {movie.genre && (
                   <div className="flex flex-wrap gap-2 mb-2">
-                      {/* Assuming genre might be an array or string, handling both roughly or expected format */}
+                      { }
                       {Array.isArray(movie.genre) 
                         ? movie.genre.map((g, i) => <span key={i} className="text-xs font-medium text-gray-300 bg-gray-800 px-2.5 py-1 rounded-full">{typeof g === 'object' ? g.name : g}</span>)
                         : <span className="text-xs font-medium text-gray-300 bg-gray-800 px-2.5 py-1 rounded-full">{movie.genre}</span>

@@ -14,7 +14,7 @@ const AddMovie = () => {
     });
     const [isLoading, setIsLoading] = useState(false);
 
-    // Helper to get token
+    
     const getToken = () => localStorage.getItem('adminToken');
 
     const handleChange = (e) => {
@@ -63,9 +63,9 @@ const AddMovie = () => {
                 <div className="p-8">
                     <form onSubmit={handleSubmit} className="space-y-6">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                            {/* Left Column: Inputs */}
+                            { }
                             <div className="space-y-6">
-                                {/* Title */}
+                                { }
                                 <div>
                                     <label className="flex items-center gap-2 text-gray-300 text-sm font-semibold mb-2" htmlFor="title">
                                         <Film className="w-4 h-4 text-red-500" />
@@ -84,7 +84,7 @@ const AddMovie = () => {
                                 </div>
 
                                 <div className="grid grid-cols-2 gap-4">
-                                    {/* Rating */}
+                                    { }
                                     <div>
                                         <label className="flex items-center gap-2 text-gray-300 text-sm font-semibold mb-2" htmlFor="rating">
                                             <Star className="w-4 h-4 text-yellow-500" />
@@ -104,7 +104,7 @@ const AddMovie = () => {
                                         />
                                     </div>
 
-                                     {/* Duration */}
+                                     { }
                                     <div>
                                          <label className="flex items-center gap-2 text-gray-300 text-sm font-semibold mb-2" htmlFor="duration">
                                             <Clock className="w-4 h-4 text-blue-500" />
@@ -123,7 +123,7 @@ const AddMovie = () => {
                                     </div>
                                 </div>
 
-                                {/* Release Date */}
+                                { }
                                  <div>
                                     <label className="flex items-center gap-2 text-gray-300 text-sm font-semibold mb-2" htmlFor="releaseDate">
                                         <Calendar className="w-4 h-4 text-green-500" />
@@ -140,7 +140,7 @@ const AddMovie = () => {
                                     />
                                 </div>
 
-                                {/* Poster URL */}
+                                { }
                                 <div>
                                     <label className="flex items-center gap-2 text-gray-300 text-sm font-semibold mb-2" htmlFor="poster">
                                         <ImageIcon className="w-4 h-4 text-purple-500" />
@@ -159,9 +159,9 @@ const AddMovie = () => {
                                 </div>
                             </div>
 
-                            {/* Right Column: Description & Preview */}
+                            { }
                             <div className="space-y-6 flex flex-col">
-                                {/* Description */}
+                                { }
                                 <div>
                                     <label className="flex items-center gap-2 text-gray-300 text-sm font-semibold mb-2" htmlFor="description">
                                         <AlignLeft className="w-4 h-4 text-orange-500" />
@@ -178,7 +178,7 @@ const AddMovie = () => {
                                     />
                                 </div>
 
-                                {/* Live Preview */}
+                                { }
                                 <div className="flex-1 bg-gray-700/30 rounded-lg border-2 border-dashed border-gray-600 flex items-center justify-center relative overflow-hidden group">
                                     {formData.poster ? (
                                         <img 
@@ -200,7 +200,7 @@ const AddMovie = () => {
                             </div>
                         </div>
 
-                        {/* Submit Button */}
+                        { }
                         <div className="pt-4">
                             <button
                                 type="submit"

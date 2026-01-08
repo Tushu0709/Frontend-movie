@@ -9,7 +9,7 @@ const AdminRoute = ({ children }) => {
         return null;
     }
 
-    // Role 'admin' is required to access these routes
+    
     return admin && admin.role === 'admin' ? children : <Navigate to="/admin/login" />;
 };
 

@@ -8,7 +8,7 @@ const Footer = () => {
     <footer className="bg-gray-900 text-gray-300 py-16 px-6 md:px-16 lg:px-36 w-full mt-20 border-t border-gray-800">
       <div className="flex flex-col md:flex-row justify-between w-full gap-10 lg:gap-20 mb-10">
         
-        {/* Brand & Description */}
+        { }
         <div className="flex-1 md:max-w-sm">
           <Link to="/" className="inline-block mb-6">
             <img src={assets.logo} alt="Movie Ticket Logo" className="w-40 h-auto" />
@@ -31,7 +31,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Quick Links */}
+        { }
         <div className="flex-1 flex flex-col md:flex-row gap-10 md:gap-20">
             <div>
                 <h3 className="text-white font-semibold text-lg mb-6 relative inline-block">
@@ -60,7 +60,7 @@ const Footer = () => {
             </div>
         </div>
 
-        {/* Newsletter */}
+        { }
         <div className="flex-1 md:max-w-xs">
             <h3 className="text-white font-semibold text-lg mb-6">Subscribe</h3>
             <p className="text-sm text-gray-400 mb-4">
