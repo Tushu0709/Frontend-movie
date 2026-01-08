@@ -1,12 +1,13 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
-import { AuthContext } from '../context/AuthContext';
-import { Link } from 'react-router-dom';
+
+import { Link, useNavigate } from 'react-router-dom';
 
 const Register = () => {
     const [formData, setFormData] = useState({ name: '', email: '', password: '', role: 'user' });
-    const { loginUser } = useContext(AuthContext);
+
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -17,8 +18,8 @@ const Register = () => {
         try {
             const { data } = await axios.post(`${import.meta.env.VITE_API_URL}/api/auth/register`, formData);
             if (data.success) {
-                loginUser(data.token, data.user, '/');
-                toast.success('Registration Successful');
+                toast.success('Registration Successful. Please Login.');
+                navigate('/login');
             } else {
                 toast.error(data.message);
             }
