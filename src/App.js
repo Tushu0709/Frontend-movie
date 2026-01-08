@@ -1,24 +1,24 @@
 import React from "react";
-import NavBar from "./components/NavBar";
+import NavBar from "./components/NavBar.jsx";
 import { Route, Routes, useLocation, Navigate } from "react-router-dom";
-import Home from "./Pages/Home";
-import Movies from "./Pages/Movies";
+import Home from "./Pages/Home.jsx";
+import Movies from "./Pages/Movies.jsx";
 
 import { Toaster } from "react-hot-toast";
-import Footer from "./components/Footer";
+import Footer from "./components/Footer.jsx";
 
 
 
-import Layout from "./Pages/admin/Layout";
+import Layout from "./Pages/admin/Layout.jsx";
 
-import AddMovie from "./Pages/admin/AddMovie";
-import UpdateMovie from "./Pages/admin/UpdateMovie";
-import ListMovies from "./Pages/admin/ListMovies";
-import Login from "./Pages/Login";
-import AdminLogin from "./Pages/AdminLogin";
-import Register from "./Pages/Register";
-import { AuthProvider } from "./context/AuthContext";
-import AdminRoute from "./components/AdminRoute";
+import AddMovie from "./Pages/admin/AddMovie.jsx";
+import UpdateMovie from "./Pages/admin/UpdateMovie.jsx";
+import ListMovies from "./Pages/admin/ListMovies.jsx";
+import Login from "./Pages/Login.jsx";
+import AdminLogin from "./Pages/AdminLogin.jsx";
+import Register from "./Pages/Register.jsx";
+import { AuthProvider } from "./context/AuthContext.jsx";
+import AdminRoute from "./components/AdminRoute.jsx";
 
 const App = () => {
   const isAdminRoute = useLocation().pathname.startsWith("/admin");
