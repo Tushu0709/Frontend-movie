@@ -2,7 +2,7 @@ import { StarIcon } from "lucide-react";
 import React, { useRef } from "react";
 import gsap from "gsap";
 
-import timeFormat from "../lib/timeformat.js";
+import timeFormat from "../lib/timeFormat.js";
 
 const MovieCard = ({movie, onClick}) => {
   const cardRef = useRef(null);
