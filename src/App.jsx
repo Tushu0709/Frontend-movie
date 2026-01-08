@@ -33,7 +33,7 @@ const App = () => {
 
 
         <Route path="/login" element={<Login />} />
-        <Route path="/adminlogin" element={<AdminLogin />} />
+        <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/register" element={<Register />} />
 
         {/* Protected Admin Routes */}
