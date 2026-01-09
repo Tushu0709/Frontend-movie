@@ -16,7 +16,7 @@ const AdminLogin = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        `${import.meta.env.VITE_API_URL}/api/admin/login`,
+        `${import.meta.env.VITE_API_URL}/api/auth/login`,
         formData
       );
       if (data.success) {
